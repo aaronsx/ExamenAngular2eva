@@ -1,0 +1,41 @@
+<div class="form-container">    
+    <form [formGroup]="form3" (submit)="enviar()" class="your-form-class">
+    
+        <div class="form-group text-center">
+            <label  for="puesto">Puesto:</label>
+            <input class="form-control" formControlName="puesto" name="puesto" type="text">
+        </div>
+        <div *ngIf="form3.controls['puesto'].errors" class="text-danger">
+            El puesto es Obligatorio
+        </div>
+        <div class="form-group text-center">
+            <label for="empresa">Empresa:</label>
+            <input class="form-control" formControlName="empresa" name="empresa" type="text">
+        </div>
+        <div *ngIf="form3.controls['empresa'].errors" class="text-danger">
+            La empresa de la cita es Obligatorio
+        </div>
+        <div class="form-group text-center">
+            <label for="numero">Numero:</label>
+            <input class="form-control" formControlName="numero" name="numero" type="number">
+        </div>
+        <div class="form-group text-center"  *ngIf="id != ''">
+            <label for="disponible">Cerrar:
+                <input  formControlName="disponible" name="disponible" type="checkbox">
+            </label>
+        </div>
+        
+        
+        <div class="row">
+            <div class="form-group col text-center m-3">
+                <button class="button-23" role="button"  
+                style="margin-top: 15px; margin-bottom: 10px;"
+                type="submit"
+                [disabled]="!form3.valid"
+                >Enviar</button>
+            </div>
+        </div>
+        
+    </form>
+</div>
+

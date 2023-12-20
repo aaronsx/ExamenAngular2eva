@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ludotica-455a4": {
+      "hosting": {
+        "ExamenAngular2eva": [
+          "ludotica-455a4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ludotica-455a4"
+  }
+}

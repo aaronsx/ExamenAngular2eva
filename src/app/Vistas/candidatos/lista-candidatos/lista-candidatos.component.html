@@ -1,0 +1,49 @@
+<div class="row" *ngIf="candidatos">
+    <div class="col" >
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Fecha De Nacimiento</th>
+              <th scope="col">dni</th>
+              <th scope="col">email</th>
+              <th scope="col">telefono</th>
+              <th scope="col">direccion</th>
+              <th scope="col">
+                <span style="color: blue">Editar</span>/<span style="color: red"
+                  >Eliminar</span
+                >
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let candidato of candidatos">
+              <td>{{ candidato.nombre }}</td>
+              <td>{{ candidato.apellidos }}</td>
+              <td>{{ candidato.fechaDeNacimiento }}</td>
+              <td>{{ candidato.dni }}</td>
+              <td>{{ candidato.email }}</td>
+              <td>{{ candidato.telefono }}</td>
+              <td>{{ candidato.direccion }}</td>
+              <td>
+                <i class="bi bi-pencil-square" routerLink="Candidatos/detalle/{{candidato.id}}"></i>
+                /<i class="bi bi-trash" (click)="eliminaCandidato(candidato)"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+<div class="row">
+  <div class="col text-center m-3">
+    <button
+    class="btn btn-primary"
+      routerLink="/Candidatos/agregar"
+      style="margin-top: 15px; margin-bottom: 10px"
+    >
+      Añadir
+    </button>
+  </div>
+</div>
+
